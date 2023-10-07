@@ -1,0 +1,18 @@
+#Complete the solution so that the function will break up camel casing, using a space between words.
+# Example
+# "camelCasing"  =>  "camel Casing"
+# "identifier"   =>  "identifier"
+# ""             =>  ""
+
+########### Solution #########
+
+def solution(s):
+    new_s = ""
+    for char in s:
+        if char.islower():
+            seperator = ""
+        if char.isupper():
+            seperator = " "
+        new_s +=  seperator + char
+    return new_s
+    pass

@@ -1,0 +1,22 @@
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        roman_dict = {'I': 1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
+       # keys = list(roman_dict.keys())
+        translator = s[0]
+        output = roman_dict[translator]
+
+        for i in (range(1, len(s))):
+                if translator =="I" and (s[i]=="V" or s[i]=="X"):
+                    output= output + roman_dict[s[i]] - 2*roman_dict[translator]
+                elif translator=="X" and (s[i]=="L" or s[i]=="C"):
+                    output= output + roman_dict[s[i]] - 2*roman_dict[translator]
+                elif translator=="C" and (s[i]=="D" or s[i]=="M"):
+                    output= output + roman_dict[s[i]] - 2*roman_dict[translator]
+                else:
+                    output+= (roman_dict[s[i]])
+                translator = s[i]
+        return output
+            

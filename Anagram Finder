@@ -1,0 +1,16 @@
+def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        count_s = {}
+        count_t = {}
+        anagram=False
+        if len(s)==len(t):
+            for letter in s:
+                count_s[letter] = s.count(letter)
+                count_t[letter] =t.count(letter)
+            if count_s==count_t :
+                anagram=True
+        return anagram

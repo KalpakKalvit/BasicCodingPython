@@ -1,0 +1,13 @@
+    def findTheDifference(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: str
+        """
+        output = ""
+        for i in range(len(s)):
+            if t.count(t[i]) != s.count(t[i]):
+                output = t[i]
+        if output=="":
+           output = t[-1]
+        return output  

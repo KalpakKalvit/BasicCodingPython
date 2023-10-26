@@ -1,0 +1,11 @@
+    def canMakeArithmeticProgression(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: bool
+        """
+        sorted_arr = sorted(arr)
+        cd = sorted_arr[1] - sorted_arr[0]
+        for i in range(1, len(sorted_arr)):
+            if sorted_arr[i] - sorted_arr[i-1] != cd:
+                return False
+        return True

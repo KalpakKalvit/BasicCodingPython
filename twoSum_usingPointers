@@ -1,0 +1,19 @@
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        index_nums = [(nums, index) for index, nums in enumerate(nums)]
+        index_nums.sort()
+        left_pointer = 0
+        right_pointer = len(index_nums) - 1
+        print(index_nums)
+        while left_pointer<right_pointer:
+            curr_sum = index_nums[left_pointer][0] + index_nums[right_pointer][0]
+            if (curr_sum)==target:
+                return [index_nums[left_pointer][1], index_nums[right_pointer][1]]
+            if (curr_sum)>target:
+                right_pointer = right_pointer -1
+            elif (curr_sum)<target:
+                left_pointer = left_pointer+1
